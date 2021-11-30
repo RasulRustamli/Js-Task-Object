@@ -70,7 +70,7 @@ class Group{
         
         var fullUser=Object.assign(this,student)
         if((this.arr.length<this.studentCount)){
-            var a= this.arr.findIndex(x => x.id ===student.Id)
+            var a= this.arr.findIndex(x => x.Id ===student.Id)
             if(a<0){
             this.arr.push(fullUser)
             
@@ -84,10 +84,13 @@ class Group{
         }
     }
 } 
-let user2=new Student(1,"Resul","Rustemli",25)
+let user2=new Student(2,"Resul","Rustemli",25)
 let user3=new Student(2,"Resul","Rustemli",25)
+let user4=new Student(4,"Resul","Rustemli",25)
 
-let grup=new Group(1,"P",2)
+
+let grup=new Group(1,"P",3)
 grup.addStudent(user2);
 grup.addStudent(user3)
+grup.addStudent(user4)
 console.log(grup.arr)
