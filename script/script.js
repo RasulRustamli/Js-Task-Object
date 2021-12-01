@@ -59,20 +59,23 @@ class Student{
 
 
 class Group{
-    constructor(id,GroupName,studentCount){
-        this.id=id;
+    constructor(GroupName,studentCount,arr=[]){
+        
         this.GroupName=GroupName;
         this.studentCount=studentCount;
-        this.arr=[]
+        this.arr=arr
     }
+    
     
     addStudent(student){
         
-        var fullUser=Object.assign(this,student)
         if((this.arr.length<this.studentCount)){
-            var a= this.arr.findIndex(x => x.Id ===student.Id)
-            if(a<0){
-            this.arr.push(fullUser)
+
+            
+
+            var a=this.arr.find(x=>x.Id===student.Id) 
+            if(a==undefined){
+            this.arr.push(student)
             
             }
             else{
@@ -84,12 +87,12 @@ class Group{
         }
     }
 } 
-let user2=new Student(2,"Resul","Rustemli",25)
-let user3=new Student(2,"Resul","Rustemli",25)
-let user4=new Student(4,"Resul","Rustemli",25)
+const user2=new Student(2,"Resul","Rustemli",25)
+const user3=new Student(2,"Resul","Rustemli",25)
+const user4=new Student(3,"Resul","Rustemli",25)
 
 
-let grup=new Group(1,"P",3)
+const grup=new Group("P",3)
 grup.addStudent(user2);
 grup.addStudent(user3)
 grup.addStudent(user4)
